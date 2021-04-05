@@ -1,0 +1,23 @@
+
+h1, h2 {
+    line-height: 1.2;
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 95;
+    text-transform: uppercase;
+    font-family: 'Georgia', sans-serif;
+
+}
+
+
+html, body {
+    margin: 25px auto;
+    max-width: 960px;
+    line-height: 1.6;
+    font-size: 20px;
+    color: rgb(0, 8, 3);
+    text-align: center;
+    padding: 0;
+    background-color: #a4ebf5;
+    font-family: 'Georgia', sans-serif;
+}
