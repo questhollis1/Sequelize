@@ -1,36 +1,44 @@
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Quest Hollis' Lab 6 </title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
-    crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Quest Hollis' WS10</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+      <link rel="stylesheet" type="text/css" href="style.css" />
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script> 
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+
 </head>
+
+
 <body>
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <div class="box container">
 
-    <section>
-        <h1>Quest Hollis' Lab 6 </h1>
-        <div>
-        <table class="table is-boredered is-stripped is-narrow is-hoverable is-fullwidth">
-            <h2> Dining Hall Information </h2>
-            <thead>
-                <tr>
-                    <th>Dining ID</th>
-                    <th>Dining Hall</th>
-                    <th>Address</th>>
-                </tr>
-            </thead>
-        </div>
-            <tbody>
-
-            </tbody>
-        </table>
-    </section>
-    <script src="script.js"></script>
+    <section class = "WS10">
+      <h1 class="title has-text-centered">Quest Hollis' WS10</h1>
+      <h2 class="title has-text-centered">Meal/Macro Info for UMD</h2>
+        <table class = "table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light">
+         <thead>
+          <tr>
+            <th class ="is-size-4">Meal ID</th>
+            <th class ="is-size-4">Meal Name</th>
+            <th class ="is-size-4">Calories</th>
+            <th class ="is-size-4">Carbs</th>
+            <th class ="is-size-4">Sodium</th>
+            <th class ="is-size-4">Protein</th>
+            <th class ="is-size-4">Fat</th>
+            <th class ="is-size-4">Cholesterol</th>
+          </tr>
+       </thead>
+        <tbody class = "w10"></tbody>
+      </table>
+   </section>
 </body>
 
+<script src="script2.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
 </html>
-
-
