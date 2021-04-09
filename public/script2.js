@@ -1,16 +1,16 @@
 async function macromeals() {
-    const requestdata = await fetch('/api/wholeMeal');
-    const macrodata = await requestdata.json();
-    const arraydata = macrodata.data;
-    console.log(arraydata);
-    console.table(macrodata);
-    const targettable = document.querySelector('.w10');
+  const requestdata = await fetch('/api/wholeMeal');
+  const macrodata = await requestdata.json();
+  const arraydata = macrodata.data;
+  console.log(arraydata);
+  console.table(macrodata);
+  const targettable = document.querySelector('.w10');
   
-    arraydata.forEach((element) => {
-      console.log(element.macro_id);
-      console.log(element.meal_id);
-      const appendelement = document.createElement('tr');
-      appendelement.innerHTML = `
+  arraydata.forEach((element) => {
+    console.log(element.macro_id);
+    console.log(element.meal_id);
+    const appendelement = document.createElement('tr');
+    appendelement.innerHTML = `
             <td>${element.macro_id}</td>
             <td>${element.meal_name}</td>
             <td>${element.calories}</td>
@@ -21,36 +21,36 @@ async function macromeals() {
             <td>${element.cholesterol}</td>
         </tr>
     `;
-      targettable.append(appendelement);
-    });
-  }
+    targettable.append(appendelement);
+  });
+}
   
-  function getRandomNumber(max) {
-    return Math.floor(Math.random() * max);
-  }
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
   
-  function getrandommeals(data) {
-    const random_meal = [];
-    for (i = 0; i < 10; i++) {
-      const current_random_meal = getRandomNumber(data.length - 1);
-      random_meal.push(data[current_random_meal]);
-      data.splice(current_random_meal, 1);
-    }
-    return random_meal;
+function getRandomMeals(data) {
+  const random_meal = [];
+  for (i = 0; i < 10; i++) {
+    const current_random_meal = getRandomInt(data.length - 1);
+    random_meal.push(data[current_random_meal]);
+    data.splice(current_random_meal, 1);
   }
+  return random_meal;
+}
   
 
-  async function mealddatapoints(macros){
+async function mealddatapoints(macros){
 
-    macro_meal_data.dataPoints.push({label: meal_data.meal_name, y: element.macros});
+macro_meal_data.dataPoints.push({label: meal_data.meal_name, y: element.macros});
 }
 
   
-  async function dataMacros() {
-    const request = await fetch('/api/wholeMeals');
-    const api_macro = await request.json();
-    const {data} = api_macro;
-    const macro_meal_data = [
+async function dataMacros() {
+  const request = await fetch('/api/wholeMeals');
+  const api_macro = await request.json();
+  const {data} = api_macro;
+  const macro_meal_data = [
       {
         type: 'stackedBar',
         name: 'Calories',
@@ -96,7 +96,7 @@ async function macromeals() {
       }
     ];
   
-    const random_meals = getrandommeals(api_macro);
+    const random_meals = getRandomMeals(api_macro);
     for (i = 0; i < random_meal_list.length; i++) {
       element = random_meals[i];
   
@@ -105,13 +105,29 @@ async function macromeals() {
   
       console.log(meal_data);
     };
-  }
+
   
- /* async function windowActions() {
+      //setting up chart
+      var chart = new CanvasJS.Chart("chartContainer",
+      {
+        title:{
+        text: "Meal Macro Information"
+        },
+        data: macro_data
+      });
+      chart.render();
+  
+    }
+
+
+
+
+
+ async function windowActions() {
     console.log('loaded window');
     const data = await macromeals();
     console.table(data);
-  } */
+  }
   
 
   /*
@@ -124,7 +140,7 @@ function getRandomIntInclusive(min, max)  {
 */
 
 
-  async function windowActions() {
+  /* async function windowActions() {
     console.log('loaded window');
     const results = await macromeals();
     const data = results.data;
@@ -139,7 +155,7 @@ function getRandomIntInclusive(min, max)  {
     console.table(selectedMeals);
   }
 
-
+*/
 
   window.onload = windowActions;
   
